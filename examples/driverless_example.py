@@ -1,9 +1,9 @@
 from selenium_driverless import webdriver
 from selenium_driverless.types.by import By
-from browser_use import BrowserUse
+from browser_use import Browser
 import asyncio
 
-class DriverlessBrowserUse(BrowserUse):
+class DriverlessBrowser(Browser):
     async def initialize_browser(self):
         """Initialize the driverless browser"""
         self.driver = await webdriver.Chrome().start()
@@ -19,7 +19,7 @@ class DriverlessBrowserUse(BrowserUse):
 
 async def main():
     # Initialize the browser
-    browser = DriverlessBrowserUse()
+    browser = DriverlessBrowser()
     await browser.initialize_browser()
     
     # Example usage
